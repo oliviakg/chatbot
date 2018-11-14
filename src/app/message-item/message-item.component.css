@@ -1,0 +1,32 @@
+.message-item {
+    background-color: #F5F5F5;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 15px;
+    padding: 5px;
+    width: fit-content;
+}
+
+.message {
+    font-size: 15px;
+}
+
+.my-message {
+    margin-left: auto;
+    background-color: #64B5F6;
+    color: white;
+}
+
+.timeform {
+    font-size: 10px;
+    font-weight: 300;
+}
+
+.first-message {
+    margin-top: 5px;
+}
+
+.last-message {
+    margin-bottom: 5px
+}

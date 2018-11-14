@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    overflow: hidden;
+}
+
+button {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+input {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+}
+
+input:focus {
+    outline: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 15px;
+    background-color: #DCDCDC;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 15px;
+    background-color: #ffffff;
+}
+
+.auto-margin {
+    margin-top: auto !important;
+}

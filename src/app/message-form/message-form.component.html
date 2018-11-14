@@ -1,0 +1,12 @@
+<div class="chat-control">
+  <form class="chat-form" [formGroup]="messageForm">
+    <input
+      class="input-message"
+      formControlName="message"
+      type="text"
+      placeholder="Type something here..."
+      (keyup.enter)="sendMessage()"
+    />
+    <button class="send-button" type="button" [ngClass]="{ disabled: disableSubmit }" (click)="sendMessage()">Send</button>
+  </form>
+</div>

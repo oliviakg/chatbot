@@ -1,0 +1,3 @@
+<div class="chatlist" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+  <div *ngFor="let msg of (messages$ | async); let i = index"><message-item [message]="msg" [i]="i"></message-item></div>
+</div>

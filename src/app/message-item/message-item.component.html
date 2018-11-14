@@ -1,0 +1,13 @@
+<div
+  class="message-item"
+  [ngClass]="{
+    'my-message': message.id === null,
+    'first-message': i === 0,
+    'last-message': i === numberOfMessages - 1
+  }"
+>
+  <div class="message">{{ message.content }}</div>
+  <div class="timeform">
+    <span class="timestamp">at {{ message.timestamp | date: 'medium' }}</span>
+  </div>
+</div>
