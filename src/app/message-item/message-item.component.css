@@ -3,7 +3,7 @@
     border-radius: 3px;
     display: flex;
     flex-direction: column;
-    margin: 20px 15px;
+    margin: 10px 15px;
     padding: 5px;
     width: fit-content;
 }
@@ -21,10 +21,6 @@
 .timeform {
     font-size: 10px;
     font-weight: 300;
-}
-
-.first-message {
-    margin-top: 5px;
 }
 
 .last-message {

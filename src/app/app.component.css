@@ -1,9 +1,9 @@
-.prompt {
+.title {
     font-size: 36px;
     font-weight: 700;
 }
 
-.chatpage {
+.page-layout {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -13,12 +13,12 @@
     align-items: center;
 }
 
-.chatbot {
+.bot-container {
     border-radius: 15px;
     width: 500px;
     height: 500px;
     border: 3px black solid;
-    flex-direction: column;
     display: flex;
+    flex-direction: column;
     justify-content: flex-end;
 }

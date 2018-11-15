@@ -1,5 +1,10 @@
 .chatlist {
     overflow: auto;
-    height: 450px;
-    margin-right: 2px;
+    height: 440px;
+    display: flex;
+    flex-direction: column;
+}
+
+.first-message {
+    margin-top: auto;
 }

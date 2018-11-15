@@ -6,7 +6,7 @@ import { Message } from '../models/message';
   templateUrl: './message-item.component.html',
   styleUrls: ['./message-item.component.css']
 })
-export class MessageItemComponent implements OnInit {
+export class MessageItemComponent {
   @Input()
   message: Message;
 
@@ -15,6 +15,4 @@ export class MessageItemComponent implements OnInit {
   @Input() numberOfMessages;
 
   constructor() {}
-
-  ngOnInit() {}
 }
