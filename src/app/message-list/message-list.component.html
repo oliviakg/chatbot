@@ -7,4 +7,5 @@
     [message]="msg"
     [i]="i"
   ></message-item>
+  <div *ngIf="dialogFlowService.isLoading.value"><div class="loading"></div></div>
 </div>

@@ -12,7 +12,6 @@ export class MessageListComponent implements OnInit {
   messages$: Observable<Message[]>;
 
   constructor(private dialogFlowService: DialogFlowService) {}
-
   ngOnInit() {
     this.messages$ = this.dialogFlowService.messages$;
   }

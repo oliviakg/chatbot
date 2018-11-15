@@ -5,6 +5,8 @@ import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { UtilityService } from './utility.service';
 import { map, tap } from 'rxjs/operators';
+import { timer } from 'rxjs/observable/timer';
+import { forkJoin } from 'rxjs/observable/forkJoin';
 
 @Injectable()
 export class DialogFlowService {
@@ -12,6 +14,7 @@ export class DialogFlowService {
 
   private _messages: BehaviorSubject<Message[]> = new BehaviorSubject<Message[]>([]);
   public readonly messages$: Observable<Message[]> = this._messages.asObservable();
+  public isLoading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor(private http: HttpClient, private utility: UtilityService) {}
 
@@ -24,11 +27,14 @@ export class DialogFlowService {
       sessionId: '12345'
     };
 
-    return this.http.post(`${this.baseURL}`, data, this.utility.getDialogFlowHeaders()).pipe(
+    this.isLoading.next(true);
+
+    return forkJoin(this.http.post(`${this.baseURL}`, data, this.utility.getDialogFlowHeaders()), timer(1500)).pipe(
       map((res: any) => {
-        return new Message(res.result.fulfillment.speech, res.id, res.timestamp);
+        return new Message(res[0].result.fulfillment.speech, res[0].id, res[0].timestamp);
       }),
       tap((message: Message) => {
+        this.isLoading.next(false);
         this._messages.next([...this._messages.getValue(), ...[message]]);
       })
     );
